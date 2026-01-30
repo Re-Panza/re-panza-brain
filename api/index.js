@@ -1,7 +1,6 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  // Configurazione CORS per permettere a GitHub di parlare con Vercel
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -53,7 +52,7 @@ module.exports = async (req, res) => {
 
     res.status(200).json({ risposta: response.data.choices[0].message.content });
   } catch (error) {
-    console.error("ERRORE SERVER:", error.response ? error.response.data : error.message);
+    console.error(error);
     res.status(500).json({ risposta: "👑 Le pergamene sono bagnate! Il Re è a banchetto, riprova tra poco." });
   }
 };
