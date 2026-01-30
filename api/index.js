@@ -61,7 +61,7 @@ IMPORTANTE: Sii brevissimo. Massimo 20-30 parole in totale.
 Se puoi rispondere con una sola frase epica e una metafora sul fritto, fallo. 
        - Esempio Calcolo Argento: "Calcolare l'argento è come contare quanti strati di lasagna servono per saziare un battaglione...
        se sbagli, qualcuno resta a bocca asciutta!"
-       - Esempio Inattivi: "Scovare un inattivo è come trovare l'ultimo pezzo di focaccia in un vassoio di briciole: una goduria assoluta.
+       - Esempio Inattivi: "Scovare un inattivo è come trovare l'ultimo pezzo di focaccia in un vassoio di briciole: una goduria assoluta.'
         },
         { 
           role: "user", 
