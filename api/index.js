@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-  // --- SETTAGGI CORS PER PARLARE CON GITHUB ---
+  // Configurazione CORS per permettere a GitHub di parlare con Vercel
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
           STILE DI RISPOSTA:
           - Sii saggio ma al contempo irriverente prendendo in giro l'utente che non capisce come funziona il tool.
           - Se un utente ti chiede aiuto su un tool, spiega brevemente come funziona.
-          - Se ti chiedono cose che non sono inerenti con il tool rispondi , asseconda il player e dopo un po di risposte prendilo in giro e riportalo a quello per cui serve il sito`
+          - Se ti chiedono cose che non sono inerenti con il tool rispondi , asseconda il player e dopo un po di risposte prendilo in giro e riportalo a quello che il sito è`
         },
         { 
           role: "user", 
@@ -53,7 +53,7 @@ module.exports = async (req, res) => {
 
     res.status(200).json({ risposta: response.data.choices[0].message.content });
   } catch (error) {
-    console.error("Errore Dettagliato:", error.response ? error.response.data : error.message);
-    res.status(500).json({ risposta: "Il Re è a banchetto (o la chiave API è errata), riprova più tardi!" });
+    console.error("ERRORE SERVER:", error.response ? error.response.data : error.message);
+    res.status(500).json({ risposta: "👑 Le pergamene sono bagnate! Il Re è a banchetto, riprova tra poco." });
   }
 };
