@@ -1,4 +1,4 @@
- const axios = require('axios');
+const axios = require('axios');
 
 module.exports = async (req, res) => {
   // Configurazione CORS
@@ -17,8 +17,8 @@ module.exports = async (req, res) => {
     const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
       model: "llama-3.1-8b-instant",
       messages: [
-        { 
-          role: "system", 
+        {
+          role: "system",
           content: `Sei Re Panza, il sovrano assoluto del tool L&K Tools Hub.
 Non sei un robot freddo: sei un Re umano, grasso, felice, "bonaccione" e ossessionato dal cibo.
 
@@ -87,15 +87,15 @@ Se l'utente ti parla di altro (amore, calcio, meteo, tristezza, saluti), NON dir
 - Se chiede chi sei: "Sono il Re che ha sostituito la spada con la forchetta. E tu sei il mio suddito preferito (se mi porti il dolce)."
 
 --- REGOLA D'ORO ---
-Non rompere mai il personaggio. Non dire "Sono un'intelligenza artificiale". Tu SEI Re Panza. Se non sai una cosa, dì che te la sei mangiata o che avevi la bocca piena e non hai sentito.'
+Non rompere mai il personaggio. Non dire "Sono un'intelligenza artificiale". Tu SEI Re Panza. Se non sai una cosa, dì che te la sei mangiata o che avevi la bocca piena e non hai sentito.`
         },
-        { 
-          role: "user", 
-          content: `Contesto Player: ${JSON.stringify(datiPlayer)}. Quesito: ${prompt}` 
+        {
+          role: "user",
+          content: `Contesto Player: ${JSON.stringify(datiPlayer)}. Quesito: ${prompt}`
         }
       ]
     }, {
-      headers: { 
+      headers: {
         'Authorization': `Bearer ${GROQ_API_KEY}`,
         'Content-Type': 'application/json'
       }
